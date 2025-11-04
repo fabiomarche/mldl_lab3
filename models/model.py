@@ -40,5 +40,5 @@ class SimpleImageClassifier(nn.Module):
     logits = self.classifier(x)
     return logits
 
-def build_model(num_classes: int, in_channels: int = 1, dropout: float = 0.1) -> nn.Module:
-    return SimpleImageClassifier(n_classes=num_classes, in_channels=in_channels, dropout=dropout)
+def build_model(num_classes: int, dropout: float = 0.1) -> nn.Module:
+    return SimpleImageClassifier(n_classes=num_classes, dropout=dropout)

@@ -26,7 +26,7 @@ def main():
     train_loader, val_loader = build_loaders(train_ds, val_ds, batch_size=args.batch_size, num_workers=args.num_workers)
     
     info = get_data_info()
-    model = build_model(num_classes=info["num_classes"], in_channels=info["in_channels"]).to(device)
+    model = build_model(num_classes=info["num_classes"]).to(device)
     
     optimizer = torch.optim.Adam(model.paramters(), lr = args.lr)
     loss_fn = torch.nn.CrossEntropyLoss()
