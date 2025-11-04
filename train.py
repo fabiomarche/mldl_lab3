@@ -28,7 +28,7 @@ def main():
     info = get_data_info()
     model = build_model(num_classes=info["num_classes"]).to(device)
     
-    optimizer = torch.optim.Adam(model.paramters(), lr = args.lr)
+    optimizer = torch.optim.Adam(model.parameters(), lr = args.lr)
     loss_fn = torch.nn.CrossEntropyLoss()
     
     history = {"train_loss": [], "train_acc": [], "val_loss": [], "val_acc": []}
